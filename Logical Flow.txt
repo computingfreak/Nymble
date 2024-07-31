@@ -1,0 +1,14 @@
+Logical Flow
+
+1. Client submits a capture request
+2. The request is received by the Request Manager.
+3. The Priority Scheduler assigns a priority to the request based on the urgency level provided by the client.
+4. The Request Manager places the request in the priority queue or task queue depending on priority.
+5. If a Camera Capture Processor is available/ready to process next request, the Request Manager dispatches the request to it.
+6. The Capture Processor interacts with the camera hardware to capture the image.
+7. If the capture is successful, the Capture Processor invokes the success callback through the Callback Handler.
+8. If the capture fails, the Error Handler generates an error message, and the failure callback is invoked.
+9. For concurrent request handling, the Priority Scheduler ensures that higher-priority requests are serviced first.
+10. Lower-priority requests wait in the queue until high priority requests are processed and the Camera Capture Processor is available for doing more work.
+11. Clients can get list of top tasks including who requested them with their urgencies/priorities.
+12. Clients can request to increase or decrease urgencies/priorities of their own tasks by looking at the other tasks.

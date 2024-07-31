@@ -1,0 +1,38 @@
+Low-Level Design (LLD)
+
+1. CaptureRequest:
+Attributes: clientID, urgencyLevel, requestID, requestTimeStamp, optional successfullCallback, optional failureCallback, optional deadlineTimestamp.
+Methods: getUrgencyLevel(), getClientID(), getRequestID() - all are to be used for priority scheduling and actual camera result mapping.
+
+2. RequestManager:
+Attributes: priorityQueue<CaptureRequest>, list<CameraCaptureProcessor>.
+Methods:
+a. submitCaptureRequest(CaptureRequest) - add a capture request to current execution queue or backlog task queue depending on urgency & timestamp by computing priority number.
+b. dispatchRequest() - returns the next high priority request from current execution queue.
+
+3. Camera CaptureProcessor:
+note: Consider using thread pools for concurrent processing if hardware supports.
+Attributes: cameraInterface, callbackHandler.
+Methods:
+a. processRequest(CaptureRequest) - stores temporary information such as requestId to map to result.
+b. captureImage()/startImageCapture() - blocks hardware for current requestId.
+c. [optional] retryImageCapture(CaptureRequest) - in case of failure, reattempt it.
+
+4. CallbackHandler:
+note1: use hashmaps to store image data or error data as applicable before sending.
+note2: use asynchronous programming constructs (e.g., promises, futures) for handling callbacks.
+Attributes: map<requestID, successCallback>, map<requestID, failureCallback>.
+Methods: registerSuccessCallback(requestID, callback), registerFailureCallback(requestID, callback), invokeSuccessCallback(requestID, image), invokeFailureCallback(requestID, errorMessage), generateError(requestID, errorMessage)
+
+alternate approach:
+storeResult(ImageCaptureResult) : map image to request id
+deliverResult(clientID, requestId) : transmit image data to the client for particular requestId
+deliverResults(clientID) : transmit image data to the client in bulk
+
+5. PriorityScheduler:
+note1: use priority queue of capturerequests.
+note2: Use locks, semaphores or monitors to protect shared data structures like this priorityqueue.
+Attributes: executionQueue(CaptureRequests)
+Methods: getTasks(), assignPriority(CaptureRequest),
+increasePriority(CaptureRequest, optional increaseByHowMuch),
+decreasePriority(CaptureRequest, optional decreaseByHowMuch).

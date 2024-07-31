@@ -1,0 +1,32 @@
+High-Level Design (HLD)
+
+A. Request Manager:
+Responsibilities:
+1. Receives capture requests from multiple clients, each with default urgency 50. Urgency can range from 0 to 100.
+2. Assigns a priority number to each request in the task queue based on its urgency, deadline and that of others. Might need to same priority number in parallel in case of same urgency and timestamp/deadline, can use a default deadline to avoid starvation problem. Closer deadline gets higher priority. functions as FCFS otherwise
+3. Maintains a task queue of requests sorted by priority.
+4. Dispatches requests to the Capture Processor via the Scheduler based on availability.
+
+B. Camera Capture Processor:
+Responsibilities:
+1. Interfaces with the actual camera hardware.
+2. Processes capture requests asynchronously depending on storage buffer.
+3. Invokes the appropriate callback (success or failure) based on the result of the capture.
+4. Handles multiple capture requests in parallel.
+
+C. Callback Handler:
+Responsibilities:
+1. Registers and stores success and failure callbacks provided by clients.
+2. Ensures that the correct callback is triggered once the Capture Processor completes a request.
+3. Handles any errors that occur during the capture process.
+4. Provides detailed error messages to the failure callback.
+
+D. Priority Scheduler:
+Responsibilities:
+1. Calculates the priority of each capture request based on its urgency & timestamp.
+2. Resolves contention between requests from different clients in case of similar urgency by using timestamp and randomly if timestamp is also same.
+3. Ensures that higher-priority requests are processed faster.
+4. Allows clients to get queue of top tasks with urgencies.
+5. Allows clients to change urgency of specific tasks.
+
+
