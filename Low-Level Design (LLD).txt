@@ -21,7 +21,8 @@ c. [optional] retryImageCapture(CaptureRequest) - in case of failure, reattempt 
 4. CallbackHandler:
 note1: use hashmaps to store image data or error data as applicable before sending.
 note2: use asynchronous programming constructs (e.g., promises, futures) for handling callbacks.
-Attributes: map<requestID, successCallback>, map<requestID, failureCallback>.
+note3: send data only to matching clientId+requestID combination.
+Attributes: map<clientID+requestID, successCallback>, map<clientID+requestID, failureCallback>.
 Methods: registerSuccessCallback(requestID, callback), registerFailureCallback(requestID, callback), invokeSuccessCallback(requestID, image), invokeFailureCallback(requestID, errorMessage), generateError(requestID, errorMessage)
 
 alternate approach:
