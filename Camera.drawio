@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.7.6">
+  <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
+    <mxGraphModel dx="2188" dy="816" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-117" value="Capture Response" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-102" target="-qMSpnPShpj3s5hu7CIN-119">
+          <mxGeometry x="0.0068" relative="1" as="geometry">
+            <mxPoint x="180" y="480" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-128" value="Polling" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-102" target="-qMSpnPShpj3s5hu7CIN-103">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="610" />
+              <mxPoint x="340" y="430" />
+              <mxPoint x="370" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-102" value="Camera Capture Processor/Interface" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="328.5" y="610" width="143" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-116" value="Capture Request" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-103" target="-qMSpnPShpj3s5hu7CIN-102">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="410" />
+              <mxPoint x="470" y="590" />
+              <mxPoint x="436" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-130" value="Fetch lower priority tasks from task queue" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-103" target="-qMSpnPShpj3s5hu7CIN-110">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-103" value="Priority Scheduler" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-124" value="Get Queue Top Tasks &lt;br&gt;with Urgencies" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-104" target="-qMSpnPShpj3s5hu7CIN-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-127" value="Change Urgency of Particular Task" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-104" target="-qMSpnPShpj3s5hu7CIN-103">
+          <mxGeometry x="0.1799" y="-20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-129" value="Polling whether task is completed&lt;br&gt;and image data is available&lt;br&gt;(can specify whether it wants in bulk)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-104" target="-qMSpnPShpj3s5hu7CIN-119">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-104" value="Client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-111" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-105" target="-qMSpnPShpj3s5hu7CIN-110">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-112" value="Low Urgency Requests &lt;br&gt;are Queued for later" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-qMSpnPShpj3s5hu7CIN-111">
+          <mxGeometry y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-105" value="Request Queue Manager" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-106" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-104" target="-qMSpnPShpj3s5hu7CIN-105">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="420" as="sourcePoint" />
+            <mxPoint x="430" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-107" value="New Image Capture Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-qMSpnPShpj3s5hu7CIN-106">
+          <mxGeometry x="0.0188" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-108" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-105" target="-qMSpnPShpj3s5hu7CIN-103">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="420" as="sourcePoint" />
+            <mxPoint x="430" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-109" value="High Urgency above threshold are immediately dispatched" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-qMSpnPShpj3s5hu7CIN-108">
+          <mxGeometry x="-0.0571" relative="1" as="geometry">
+            <mxPoint y="-39" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-110" value="Task Queue" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1.008;entryY=0.633;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-110" target="-qMSpnPShpj3s5hu7CIN-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-114" value="Accept Low Urgency Requests &lt;br&gt;once High Urgency requests are served" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-qMSpnPShpj3s5hu7CIN-113">
+          <mxGeometry x="0.1334" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-120" value="Image Data" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-119" target="-qMSpnPShpj3s5hu7CIN-104">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-60" y="610" />
+              <mxPoint x="30" y="610" />
+              <mxPoint x="30" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-121" value="Error Metadata" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="-qMSpnPShpj3s5hu7CIN-119" target="-qMSpnPShpj3s5hu7CIN-104">
+          <mxGeometry x="-0.0012" relative="1" as="geometry">
+            <mxPoint x="60" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-180" y="610" />
+              <mxPoint x="-260" y="610" />
+              <mxPoint x="-260" y="310" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-qMSpnPShpj3s5hu7CIN-119" value="Callback Handler/&lt;br&gt;Result Dispatcher" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="610" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
